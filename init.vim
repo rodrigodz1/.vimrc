@@ -6,10 +6,15 @@
 :set smarttab
 :set softtabstop=2
 :set mouse=a
-
 let mapleader = ","
 
 nnoremap <leader>p :FZF<cr>
+nnoremap <leader>d *``cgn
+" Using ,d typing then pressing .
+nnoremap <leader>q :q!<cr>
+nnoremap <leader>z :wq<cr>
+nnoremap <leader>w :w<cr>
+nnoremap <leader>a ggVG
 
 call plug#begin()
 
