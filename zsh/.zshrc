@@ -13,7 +13,13 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/Downloads/sonarqube-9.3.0.51899/bin/linux-x86-64:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
-alias ell-bdv="cd ~/www/elliptic/ultimo-api/"
+alias "ls"="exa -l --icons -F"
+
 source /home/rodrigo/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 . $HOME/.asdf/asdf.sh
+
+# Install Ruby Gems to ~/gems
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
