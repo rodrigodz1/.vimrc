@@ -35,6 +35,7 @@ lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.colorscheme = "nightfox"
 local nightfox = require('nightfox')
+local null_ls = require('null-ls')
 
 -- My custom configs
 vim.g.instant_username = "Rodrigo"
@@ -61,6 +62,16 @@ nightfox.setup({
   hlgroups = {
     TSPunctDelimiter = { fg = "${red}" }, -- Override a highlight group with the color red
     LspCodeLens = { bg = "#000000", style = "italic" },
+  }
+})
+
+null_ls.setup({
+  sources = {
+    null_ls.builtins.diagnostics.eslint,
+    null_ls.builtins.code_actions.eslint,
+    null_ls.builtins.formatting.prettier.with({
+      timeout = 7000
+    })
   }
 })
 
