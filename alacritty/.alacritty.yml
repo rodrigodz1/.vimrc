@@ -134,4 +134,7 @@ schemes:
       white:   '#c1cdc1'
 
 # Just choose a schema here
-colors: *nord
+colors: *cobalt2
+
+env:
+  TERM: xterm-256color
