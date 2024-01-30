@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Get the session name from openvpn3 sessions-list
+session_name=$(openvpn3 sessions-list | awk '/Session name/{print $NF}')
+
+if [ -n "$session_name" ]; then
+    echo "$session_name"
+    echo "up"
+    echo "#00FF00"
+else
+    echo "home"
+    echo "home"
+    echo "#FF0000"
+fi
+

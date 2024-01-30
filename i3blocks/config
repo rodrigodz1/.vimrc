@@ -1,0 +1,81 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden. Each block command defaults to the script name to avoid boilerplate. Change $SCRIPT_DIR to the location of your scripts! command=$SCRIPT_DIR/$BLOCK_NAME
+separator_block_width=15
+markup=pango
+
+[openvpn3-session]
+command=$SCRIPT_DIR/openvpn3-session
+interval=10
+
+[gpu-load]
+command=$SCRIPT_DIR/gpu-load
+label=GPU  
+interval=10
+#min_width=GPU 100% 100% 100% 100%
+GPU_BRAND=NVIDIA
+#T_WARN=70
+#T_CRIT=90
+
+# CPU usage
+#
+# The script may be called with -w and -c switches to specify thresholds,
+# see the script for details.
+[cpu_usage]
+label=   
+interval=10
+# min_width=CPU 100.00%
+command=$SCRIPT_DIR/cpu_usage
+T_WARN=50
+T_CRIT=80
+DECIMALS=2
+COLOR_NORMAL=#ABDBB2
+COLOR_WARN=#FFFC00
+COLOR_CRIT=#FF0000
+
+[temperature]
+command=$SCRIPT_DIR/temperature
+label=󰏈    
+interval=10
+#T_WARN=70
+#T_CRIT=90
+#SENSOR_CHIP=""
+
+[memory]
+command=$SCRIPT_DIR/memory
+label=MEM 
+interval=30
+
+[disk_nas]
+label=:  
+instance=/nas
+interval=30
+command=$SCRIPT_DIR/disk_usage
+
+# Date Time
+#
+[time]
+command=date '+%d-%m-%Y |  %H:%M:%S'
+interval=5
